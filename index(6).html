@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Yorkers for a United Ireland — Mayor Mamdani, Finish What You Started</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #169B62;
+    --green-dark: #0D5C3A;
+    --green-deep: #0a1f14;
+    --white: #F8F5EF;
+    --orange: #E07020;
+    --orange-light: #F5924A;
+    --gold: #C9A84C;
+    --ink: #1A1A1A;
+    --cream: #F2EDE3;
+    --mid-green: #1a7a4e;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 62px;
+    background: rgba(10, 31, 20, 0.97);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--green);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    font-weight: 700;
+  }
+  .nav-logo span { color: var(--orange); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--orange); }
+
+  .nav-cta {
+    background: var(--orange);
+    color: var(--white) !important;
+    padding: 0.45rem 1.2rem;
+    border-radius: 2px;
+    font-weight: 500 !important;
+  }
+  .nav-cta:hover { background: var(--orange-light); color: var(--white) !important; }
+
+  /* ─── TRICOLOR BAR ─── */
+  .tricolor-bar {
+    height: 5px;
+    background: linear-gradient(to right, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--orange) 66.66%);
+    position: fixed;
+    top: 62px; left: 0; right: 0;
+    z-index: 99;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: var(--green-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Celtic knot SVG background pattern */
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 5 C20 5, 5 20, 5 40 S20 75, 40 75 75 60, 75 40 60 5, 40 5z' fill='none' stroke='%23169B62' stroke-width='2'/%3E%3Cpath d='M40 15 C25 15, 15 25, 15 40 S25 65, 40 65 65 55, 65 40 55 15, 40 15z' fill='none' stroke='%23169B62' stroke-width='1.5'/%3E%3Cpath d='M40 0 L40 80 M0 40 L80 40' stroke='%23169B62' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='40' cy='40' r='3' fill='%23169B62'/%3E%3Ccircle cx='5' cy='5' r='2' fill='%23169B62'/%3E%3Ccircle cx='75' cy='5' r='2' fill='%23169B62'/%3E%3Ccircle cx='5' cy='75' r='2' fill='%23169B62'/%3E%3Ccircle cx='75' cy='75' r='2' fill='%23169B62'/%3E%3C/svg%3E");
+    animation: patternDrift 30s linear infinite;
+  }
+
+  @keyframes patternDrift {
+    from { background-position: 0 0; }
+    to { background-position: 80px 80px; }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--white);
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .hero-sub {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    color: rgba(248, 245, 239, 0.72);
+    max-width: 640px;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-quote-block {
+    background: rgba(22, 155, 98, 0.15);
+    border-left: 4px solid var(--green);
+    padding: 1.25rem 2rem;
+    max-width: 700px;
+    margin-bottom: 3rem;
+    text-align: left;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .hero-quote-block blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--white);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-quote-block cite {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.8s 1s forwards;
+  }
+
+  .btn-primary {
+    background: var(--green);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+    border: 2px solid var(--green);
+  }
+  .btn-primary:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(22, 155, 98, 0.3);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--orange);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    border: 2px solid var(--orange);
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover {
+    background: var(--orange);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.4s forwards;
+  }
+  .hero-scroll span {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .hero-scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+    animation: scrollLine 1.5s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { transform: scaleY(1); opacity: 0.5; }
+    50% { transform: scaleY(1.3); opacity: 1; }
+  }
+
+  /* ─── BREAKING NEWS TICKER ─── */
+  .ticker-wrap {
+    background: var(--orange);
+    overflow: hidden;
+    padding: 0.6rem 0;
+    position: relative;
+  }
+  .ticker-label {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: var(--green-deep);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 0 1.2rem;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  .ticker-track {
+    display: flex;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+    padding-left: 180px;
+  }
+  .ticker-item {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    padding: 0 3rem;
+  }
+  .ticker-dot {
+    color: rgba(255,255,255,0.5);
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .section-label.light { color: var(--orange); }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ─── SECTION: HE SAID IT ─── */
+  #he-said-it {
+    background: var(--cream);
+    position: relative;
+  }
+
+  #he-said-it::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--green), var(--white), var(--orange));
+  }
+
+  .said-it-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .said-it-content p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: #2a2a2a;
+    margin-bottom: 1.2rem;
+  }
+
+  .pull-quote {
+    border-left: 5px solid var(--gold);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    background: rgba(201, 168, 76, 0.08);
+  }
+
+  .pull-quote blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.45;
+    color: var(--green-dark);
+    margin-bottom: 0.5rem;
+  }
+
+  .pull-quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .said-it-stats {
+    background: var(--green-deep);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .said-it-stats::before {
+    content: '☘';
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-size: 10rem;
+    opacity: 0.05;
+    line-height: 1;
+  }
+
+  .stat-item {
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-item:last-child { margin-bottom: 0; }
+
+  .stat-num {
+    font-family: var(--font-mono);
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: rgba(248, 245, 239, 0.7);
+    line-height: 1.4;
+  }
+
+  .stat-divider {
+    height: 1px;
+    background: rgba(22, 155, 98, 0.25);
+    margin: 1.5rem 0;
+  }
+
+  /* ─── SECTION: WHY MAMDANI ─── */
+  #why-mamdani {
+    background: var(--green-deep);
+    color: var(--white);
+  }
+
+  #why-mamdani h2 { color: var(--white); }
+  #why-mamdani h2 em { color: var(--orange); font-style: italic; }
+
+  .bridge-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .bridge-card {
+    display: grid;
+    grid-template-columns: 1fr 48px 1fr;
+    gap: 0;
+    align-items: stretch;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(22, 155, 98, 0.2);
+    transition: all 0.3s;
+  }
+
+  .bridge-card:hover {
+    border-color: rgba(22, 155, 98, 0.5);
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-2px);
+  }
+
+  .bridge-left {
+    padding: 1.8rem 2rem;
+    border-right: 1px solid rgba(22, 155, 98, 0.15);
+  }
+
+  .bridge-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 0.6rem;
+  }
+
+  .bridge-left p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .bridge-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(22, 155, 98, 0.1);
+  }
+
+  .bridge-connector span {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .bridge-right {
+    padding: 1.8rem 2rem;
+  }
+
+  .bridge-right .bridge-label { color: var(--gold); }
+
+  .bridge-right p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.8);
+  }
+
+  /* ─── SECTION: COMMUNITY ─── */
+  #community {
+    background: var(--orange);
+    color: var(--white);
+    text-overflow: ellipsis;
+  }
+
+  #community h2 { color: var(--white); }
+
+  .community-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--white);
+    margin-bottom: 3rem;
+    max-width: 800px;
+  }
+
+  .community-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 2px solid rgba(255,255,255,0.3);
+    margin-bottom: 3rem;
+  }
+
+  .comm-stat {
+    padding: 2.5rem 1.5rem;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+  }
+  .comm-stat:last-child { border-right: none; }
+
+  .comm-stat-num {
+    font-family: var(--font-mono);
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .comm-stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.35;
+  }
+
+  .community-quote-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .comm-quote {
+    background: rgba(0,0,0,0.15);
+    padding: 2rem;
+  }
+
+  .comm-quote blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+
+  .comm-quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* ─── SECTION: TIMELINE ─── */
+  #timeline {
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  #timeline h2 span { color: var(--green); }
+
+  .timeline-track {
+    margin-top: 3.5rem;
+    position: relative;
+    padding-left: 2px;
+  }
+
+  .timeline-track::before {
+    content: '';
+    position: absolute;
+    left: 90px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--orange));
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0;
+    margin-bottom: 2.5rem;
+    align-items: start;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 83px;
+    top: 0.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--green);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--green);
+  }
+
+  .timeline-item.highlight::before {
+    background: var(--orange);
+    box-shadow: 0 0 0 2px var(--orange);
+    width: 20px;
+    height: 20px;
+    left: 81px;
+  }
+
+  .timeline-year {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    padding-top: 0.35rem;
+    padding-right: 1rem;
+    text-align: right;
+  }
+
+  .timeline-content {
+    padding-left: 2.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .timeline-content h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .timeline-item.highlight .timeline-content h4 { color: var(--orange); }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* ─── SECTION: THE ASK ─── */
+  #the-ask {
+    background: var(--green-deep);
+    color: var(--white);
+  }
+
+  #the-ask h2 { color: var(--white); }
+
+  .ask-intro {
+    font-size: 1.2rem;
+    color: rgba(248,245,239,0.72);
+    max-width: 680px;
+    line-height: 1.65;
+    margin-bottom: 4rem;
+    font-weight: 300;
+  }
+
+  .ask-items {
+    display: grid;
+    gap: 2px;
+  }
+
+  .ask-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(22,155,98,0.2);
+    transition: all 0.3s;
+    align-items: stretch;
+  }
+
+  .ask-item:hover {
+    background: rgba(22,155,98,0.1);
+    border-color: rgba(22,155,98,0.5);
+  }
+
+  .ask-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(22,155,98,0.25);
+    border-right: 1px solid rgba(22,155,98,0.2);
+    transition: color 0.3s;
+  }
+
+  .ask-item:hover .ask-num { color: var(--green); }
+
+  .ask-text {
+    padding: 2rem 2.5rem;
+  }
+
+  .ask-text h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+
+  .ask-text p {
+    font-size: 0.95rem;
+    color: rgba(248,245,239,0.65);
+    line-height: 1.6;
+  }
+
+  /* ─── SECTION: PETITION ─── */
+  #petition {
+    background: var(--cream);
+  }
+
+  .petition-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .petition-copy h2 { margin-bottom: 1rem; }
+
+  .petition-copy p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1.2rem;
+  }
+
+  .petition-copy .connolly-quote {
+    border-left: 4px solid var(--green);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: rgba(22,155,98,0.06);
+  }
+  .petition-copy .connolly-quote blockquote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--green-dark);
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+  .petition-copy .connolly-quote cite {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+  }
+
+  .form-card {
+    background: var(--white);
+    border: 2px solid var(--green);
+    padding: 3rem;
+    position: relative;
+  }
+
+  .form-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px;
+    height: 5px;
+    background: linear-gradient(to right, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--orange) 66.66%);
+  }
+
+  .form-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .form-card .form-sub {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #ccc;
+    background: var(--white);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--ink);
+    outline: none;
+    border-radius: 0;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green);
+  }
+
+  .form-group textarea {
+    height: 100px;
+    resize: vertical;
+  }
+
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23169B62'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-submit {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+    border-radius: 0;
+  }
+
+  .btn-submit:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(22, 155, 98, 0.25);
+  }
+
+  .form-privacy {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+  }
+  .form-success.active { display: block; }
+  .form-success h4 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+  .form-success p {
+    color: #555;
+    font-size: 0.95rem;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--green-deep);
+    padding: 4rem 2rem 2rem;
+  }
+
+  .footer-tricolor {
+    height: 5px;
+    background: linear-gradient(to right, var(--green) 33.33%, var(--white) 33.33%, var(--white) 66.66%, var(--orange) 66.66%);
+    margin-bottom: 3rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .footer-brand .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--white);
+    font-weight: 900;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-brand .footer-tagline {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  .footer-links h4 {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+
+  .footer-links ul { list-style: none; }
+  .footer-links li { margin-bottom: 0.5rem; }
+  .footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-share h4 {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+
+  .footer-share p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .share-btn {
+    display: inline-block;
+    background: rgba(22,155,98,0.2);
+    color: var(--white);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border-radius: 2px;
+    border: 1px solid rgba(22,155,98,0.4);
+    transition: all 0.2s;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .share-btn:hover { background: var(--green); border-color: var(--green); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-eire {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--green);
+  }
+
+  /* ─── SCROLL ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .said-it-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .bridge-card { grid-template-columns: 1fr; }
+    .bridge-connector { display: none; }
+    .bridge-left { border-right: none; border-bottom: 1px solid rgba(22,155,98,0.15); }
+    .community-stats-row { grid-template-columns: 1fr 1fr; }
+    .comm-stat:nth-child(2) { border-right: none; }
+    .community-quote-pair { grid-template-columns: 1fr; }
+    .petition-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 4rem 1.25rem; }
+    .community-stats-row { grid-template-columns: 1fr 1fr; }
+    .timeline-track::before { left: 70px; }
+    .timeline-item { grid-template-columns: 70px 1fr; }
+    .timeline-item::before { left: 63px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">New Yorkers for a <span>United Ireland</span></div>
+  <ul class="nav-links">
+    <li><a href="#he-said-it">Context</a></li>
+    <li><a href="#why-mamdani">The Case</a></li>
+    <li><a href="#timeline">History</a></li>
+    <li><a href="#the-ask">Our Ask</a></li>
+    <li><a href="#petition" class="nav-cta">Sign the Petition</a></li>
+  </ul>
+</nav>
+<div class="tricolor-bar"></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+
+  <div class="hero-eyebrow">New York City · March 2026 · An Open Appeal to Mayor Mamdani</div>
+
+  <h1 class="hero-headline">
+    He Said It.<br>Now <em>Commit</em> to It.
+  </h1>
+
+  <p class="hero-sub">
+    Mayor Mamdani invoked self-determination for the Irish on St. Patrick's Day. New York's 2.1 million Irish Americans are asking him to go one step further and formally endorse a United Ireland.
+  </p>
+
+  <div class="hero-quote-block">
+    <blockquote>
+      "As someone who believes deeply in the principle of self-determination, I think that should also be extended to the Irish."
+    </blockquote>
+    <cite>— Mayor Zohran Mamdani, NYC St. Patrick's Day Parade, March 17, 2026</cite>
+  </div>
+
+  <div class="hero-btns">
+    <a href="#petition" class="btn-primary">Sign the Petition</a>
+    <a href="#why-mamdani" class="btn-ghost">The Case for Unity</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">Breaking</div>
+  <div class="ticker-track">
+    <span class="ticker-item">Mamdani quotes James Connolly at Labor Coalition luncheon <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">TWU President Samuelsen: "It's clear to me he will support Irish reunification" <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Sinn Féin TD Louise O'Reilly meets Mayor at Connolly luncheon <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Mayor delivers sweeping Irish history address at Gracie Mansion breakfast <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Ireland's Mary Robinson honored at NYC mayoral event <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Mamdani invokes St. Patrick's solidarity with Palestine and the oppressed <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Mamdani quotes James Connolly at Labor Coalition luncheon <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">TWU President Samuelsen: "It's clear to me he will support Irish reunification" <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Sinn Féin TD Louise O'Reilly meets Mayor at Connolly luncheon <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Mayor delivers sweeping Irish history address at Gracie Mansion breakfast <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Ireland's Mary Robinson honored at NYC mayoral event <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Mamdani invokes St. Patrick's solidarity with Palestine and the oppressed <span class="ticker-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- SECTION: HE SAID IT -->
+<section id="he-said-it">
+  <div class="container">
+    <div class="said-it-grid">
+      <div class="said-it-content reveal">
+        <span class="section-label">What Just Happened</span>
+        <h2>The Mayor Is Already Halfway There</h2>
+
+        <p>On March 17, 2026, Mayor Zohran Mamdani stood at the St. Patrick's Day Parade and, pressed by reporters on Irish unity, declared his belief in "the principle of self-determination" for the Irish people. Then he went home and posted a sweeping, passionate video celebrating 1,600 years of Irish resistance to British colonialism.</p>
+
+        <div class="pull-quote">
+          <blockquote>"It is no small act to weep with those who weep. It is a choice, one that many do not make."</blockquote>
+          <cite>— Mayor Mamdani, Gracie Mansion St. Patrick's Day Breakfast, March 17, 2026</cite>
+        </div>
+
+        <p>That same morning, he had quoted James Connolly — "The cause of labor is the cause of Ireland, the cause of Ireland is the cause of labor" — at the James Connolly Irish American Labor Coalition luncheon. He praised Ireland's long tradition of solidarity: with anti-apartheid movements, with Palestinians, with the colonized everywhere.</p>
+
+        <p>His labor ally, Transport Workers Union President <strong>John Samuelsen</strong>, put it plainly: <em>"It's clear to me that he will support the cause for Irish reunification. We're gonna go over this with him in detail, and he's gonna stand with us."</em></p>
+
+        <p>We are asking the Mayor to take the final step: from principle to endorsement. From "self-determination" to "United Ireland." New York is ready. History is ready. Is he?</p>
+      </div>
+
+      <div class="said-it-stats reveal reveal-delay-2">
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="2100000">0</div>
+          <div class="stat-label">New Yorkers of Irish ancestry — the mayor's second-largest non-Hispanic white ethnic constituency</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num counter" data-target="440000">0</div>
+          <div class="stat-label">NYC residents who directly claim Irish heritage — a voting bloc no mayor can ignore</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">1762</div>
+          <div class="stat-label">Year of the first NYC St. Patrick's Day Parade — Irish New York predates the Republic itself</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-num">4 yrs</div>
+          <div class="stat-label">Sinn Féin's projected timeline for a border poll referendum on reunification</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: WHY MAMDANI -->
+<section id="why-mamdani">
+  <div class="container">
+    <span class="section-label light">The Ideological Case</span>
+    <h2>His Values. <em>Our Cause.</em><br>They Are the Same.</h2>
+
+    <div class="bridge-grid">
+
+      <div class="bridge-card reveal">
+        <div class="bridge-left">
+          <div class="bridge-label">Mamdani's Position</div>
+          <p>Called for an end to "occupation" and "apartheid" in his statement after October 7; repeatedly invokes <strong>international law</strong> and the right of peoples to self-determination. Said on CNN: "This is a city that believes in international law."</p>
+        </div>
+        <div class="bridge-connector"><span>≡</span></div>
+        <div class="bridge-right">
+          <div class="bridge-label">United Ireland Parallel</div>
+          <p>The <strong>Good Friday Agreement</strong> — an internationally ratified treaty — guarantees Ireland's right to a border poll. Westminster's ongoing obstruction of that poll is a breach of international law. Mamdani's principle demands he speak.</p>
+        </div>
+      </div>
+
+      <div class="bridge-card reveal reveal-delay-1">
+        <div class="bridge-left">
+          <div class="bridge-label">Mamdani's Position</div>
+          <p>Born in Uganda, son of postcolonial scholar <strong>Mahmood Mamdani</strong> — a leading theorist of colonialism's legacy. Views global inequality through the lens of colonial extraction and the unfinished work of decolonization.</p>
+        </div>
+        <div class="bridge-connector"><span>≡</span></div>
+        <div class="bridge-right">
+          <div class="bridge-label">United Ireland Parallel</div>
+          <p>Partition of Ireland in 1921 is the <strong>original British colonial wound</strong> in Western Europe — imposed against democratic will, maintained by gerrymandering and sectarian governance. Reunification is decolonization on Europe's doorstep.</p>
+        </div>
+      </div>
+
+      <div class="bridge-card reveal reveal-delay-2">
+        <div class="bridge-left">
+          <div class="bridge-label">Mamdani's Position</div>
+          <p>Quoted <strong>James Connolly</strong> — "The cause of labor is the cause of Ireland, the cause of Ireland is the cause of labor" — at the James Connolly Labor Coalition luncheon on March 13, 2026. Understands the labor-liberation nexus.</p>
+        </div>
+        <div class="bridge-connector"><span>≡</span></div>
+        <div class="bridge-right">
+          <div class="bridge-label">United Ireland Parallel</div>
+          <p>Connolly didn't just found the Irish labor movement — he died for Irish independence in 1916. The <strong>TWU</strong>, whose president is Mamdani's close ally, is directly modeled on the Irish Transport and General Workers' Union. The roots run deep.</p>
+        </div>
+      </div>
+
+      <div class="bridge-card reveal reveal-delay-3">
+        <div class="bridge-left">
+          <div class="bridge-label">Mamdani's Position</div>
+          <p>Himself an immigrant and naturalized US citizen since 2018. Has made <strong>immigrant solidarity and diaspora rights</strong> central to his mayoralty. Calls ICE's actions against immigrants "fascist." Believes belonging transcends borders.</p>
+        </div>
+        <div class="bridge-connector"><span>≡</span></div>
+        <div class="bridge-right">
+          <div class="bridge-label">United Ireland Parallel</div>
+          <p>The Irish diaspora in NYC — built through famine, persecution, and exile — has always been the <strong>engine of Irish freedom</strong>. Without Irish America, there is no Good Friday Agreement. Mamdani leads their city. Their cause is his constituency.</p>
+        </div>
+      </div>
+
+      <div class="bridge-card reveal reveal-delay-4">
+        <div class="bridge-left">
+          <div class="bridge-label">Mamdani's Position</div>
+          <p>Praised Ireland's <strong>history of solidarity</strong> — with anti-apartheid South Africa, with Palestinian statehood (recognized by Ireland in 1980), with the colonized worldwide. Called Ireland "a nation that has never withheld solidarity."</p>
+        </div>
+        <div class="bridge-connector"><span>≡</span></div>
+        <div class="bridge-right">
+          <div class="bridge-label">United Ireland Parallel</div>
+          <p>Ireland's solidarity tradition flows directly from its own unfinished struggle. The northern counties are still under partition. <strong>True solidarity with Ireland</strong> means solidarity with Ireland's own democratic aspiration — reunification.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: COMMUNITY -->
+<section id="community">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,0.7)">New York's Irish Voice</span>
+    <div class="community-headline reveal">
+      New York is the largest Irish city outside of Ireland itself.
+    </div>
+
+    <div class="community-stats-row reveal reveal-delay-1">
+      <div class="comm-stat">
+        <span class="comm-stat-num counter" data-target="2100000">0</span>
+        <div class="comm-stat-label">New Yorkers of<br>Irish ancestry</div>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-num">30.7M</span>
+        <div class="comm-stat-label">Americans claiming<br>Irish ancestry nationally</div>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-num">$2M</span>
+        <div class="comm-stat-label">Raised by Irish unity<br>advocates in NYC over 5 yrs</div>
+      </div>
+      <div class="comm-stat">
+        <span class="comm-stat-num">1998</span>
+        <div class="comm-stat-label">Good Friday Agreement<br>guarantees border poll right</div>
+      </div>
+    </div>
+
+    <div class="community-quote-pair reveal reveal-delay-2">
+      <div class="comm-quote">
+        <blockquote>"Without the influence of Irish America, we wouldn't have a Good Friday Agreement. I'm here to ask these people to stick with us and to use their influence… to talk about Irish unity."</blockquote>
+        <cite>— Louise O'Reilly, Sinn Féin TD, NYC, March 2026</cite>
+      </div>
+      <div class="comm-quote">
+        <blockquote>"Our roots are in Ireland. We're directly named after the Irish Transport and General Workers' Union. The rights of workers and the cause of Irish unity are not up for debate."</blockquote>
+        <cite>— John Samuelsen, President, Transport Workers Union Local 100</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <span class="section-label">Historical Context</span>
+    <h2>The Long Arc of <span>Irish Freedom</span></h2>
+
+    <div class="timeline-track">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-year">1845–52</div>
+        <div class="timeline-content">
+          <h4>The Great Famine</h4>
+          <p>British colonial mismanagement during the potato famine kills one million Irish and drives another million to New York City. Irish America is born of catastrophe and colonial neglect.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-year">1916</div>
+        <div class="timeline-content">
+          <h4>The Easter Rising</h4>
+          <p>James Connolly, Patrick Pearse and their comrades proclaim an Irish Republic. Connolly, both labor organizer and republican revolutionary, is executed by the British. Mayor Mamdani quoted him in March 2026.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-year">1921</div>
+        <div class="timeline-content">
+          <h4>Partition Imposed</h4>
+          <p>Britain partitions Ireland, separating six northern counties into "Northern Ireland" against the democratic will of the majority of the Irish people. The wound that still remains open.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-3">
+        <div class="timeline-year">1969–98</div>
+        <div class="timeline-content">
+          <h4>The Troubles</h4>
+          <p>Thirty years of conflict in Northern Ireland. Catholic and nationalist communities face systematic discrimination, internment without trial, and political exclusion. Ten men die on hunger strike in 1981 — a name-checked by Mamdani in his St. Patrick's Day address.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-year">1998</div>
+        <div class="timeline-content">
+          <h4>Good Friday Agreement</h4>
+          <p>Brokered with critical Irish-American involvement, the Agreement ends the armed conflict and — crucially — enshrines the right of the Irish people to vote on reunification in a border poll.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-content">
+          <h4>Sinn Féin Wins Stormont</h4>
+          <p>For the first time in history, Sinn Féin becomes the largest party in Northern Ireland's assembly. Michelle O'Neill becomes the first Irish nationalist First Minister. The demographic and political tide has turned.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item highlight reveal reveal-delay-2">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-content">
+          <h4>The Moment Is Now — And the Mayor Is With Us</h4>
+          <p>Mayor Mamdani quotes Connolly, hosts Sinn Féin, addresses 1,600 years of Irish history, and declares belief in self-determination for the Irish. Sinn Féin projects a border poll within four years. New York must speak now.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: THE ASK -->
+<section id="the-ask">
+  <div class="container">
+    <span class="section-label light">What We're Asking</span>
+    <h2>Three Steps, Mayor Mamdani.</h2>
+
+    <p class="ask-intro">You've already said you believe in self-determination for the Irish. You've quoted Connolly. You've honored Ireland's resistance. Now we ask you to put the full weight of New York City's voice behind the cause.</p>
+
+    <div class="ask-items">
+
+      <div class="ask-item reveal">
+        <div class="ask-num">1</div>
+        <div class="ask-text">
+          <h3>Issue a Formal Endorsement</h3>
+          <p>Go beyond "self-determination as a principle" and issue a clear, formal mayoral statement endorsing the Irish people's right to a border poll on reunification under the Good Friday Agreement. Words matter. New York's mayors have shaped this debate before. Ed Koch did it. Bill de Blasio did it. Now you.</p>
+        </div>
+      </div>
+
+      <div class="ask-item reveal reveal-delay-1">
+        <div class="ask-num">2</div>
+        <div class="ask-text">
+          <h3>Convene NYC's Irish-American Leadership</h3>
+          <p>Bring together the Transport Workers Union, the Ancient Order of Hibernians, Sinn Féin's American offices, and Irish-American community leaders at City Hall for a formal dialogue on reunification. Make New York a deliberate, organized voice in this democratic conversation — not just a backdrop for a parade.</p>
+        </div>
+      </div>
+
+      <div class="ask-item reveal reveal-delay-2">
+        <div class="ask-num">3</div>
+        <div class="ask-text">
+          <h3>Oppose Westminster's Obstruction</h3>
+          <p>In any international forum, bilateral meeting, or public address, call on the British government to honor the Good Friday Agreement and not obstruct the exercise of a legitimate border poll when the conditions are met. The agreement is international law. You said this city believes in international law. Prove it.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: PETITION -->
+<section id="petition">
+  <div class="container">
+    <div class="petition-layout">
+
+      <div class="petition-copy reveal">
+        <span class="section-label">Add Your Name</span>
+        <h2>Tell Mayor Mamdani: The Time Is Now</h2>
+
+        <p>He marched in the parade. He quoted Connolly. He praised Irish solidarity with the oppressed. He said he believes in self-determination for the Irish.</p>
+
+        <p>Now 2.1 million Irish New Yorkers — and every New Yorker who believes in the principle of national self-determination — are asking him to make it official.</p>
+
+        <div class="connolly-quote">
+          <blockquote>"The cause of labor is the cause of Ireland, and the cause of Ireland is the cause of labor."</blockquote>
+          <cite>— James Connolly, quoted by Mayor Mamdani, March 13, 2026</cite>
+        </div>
+
+        <p>A petition signature is a civic act. Your name will be compiled and formally delivered to the Mayor's office. No spam, no nonsense — just New York speaking with one voice.</p>
+      </div>
+
+      <div class="form-card reveal reveal-delay-2">
+        <h3>Sign the Petition</h3>
+        <span class="form-sub">Delivered to Mayor Mamdani's Office</span>
+
+        <!-- ↓ FORMSPREE: replace YOUR_FORM_ID with your real ID from formspree.io/f/xxxxxxxx -->
+        <form
+          id="petition-form"
+          action="https://formspree.io/f/mqeywbjk"
+          method="POST"
+          onsubmit="handleSubmit(event)"
+        >
+          <!-- Redirect back to same page after submit -->
+          <input type="hidden" name="_next" value="?signed=true">
+          <input type="hidden" name="_subject" value="🍀 New United Ireland Petition Signature">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="Seamus" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="O'Brien" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="borough">Your Borough</label>
+            <select id="borough" name="borough">
+              <option value="">Select a borough</option>
+              <option>Manhattan</option>
+              <option>Brooklyn</option>
+              <option>Queens</option>
+              <option>The Bronx</option>
+              <option>Staten Island</option>
+              <option>Outside NYC</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Personal Message (Optional)</label>
+            <textarea id="message" name="message" placeholder="Tell Mayor Mamdani why a United Ireland matters to you…"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Sign the Petition — Éire Aontaithe</button>
+          <p class="form-privacy">Your information will only be used to deliver this petition to the Mayor's office. We will never sell or share your data with third parties.</p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <h4>Go raibh maith agat.</h4>
+          <p>Thank you. Your name has been added. Share this page and help grow our voice.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-tricolor"></div>
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <span class="footer-logo">New Yorkers for a United Ireland</span>
+      <p class="footer-tagline">
+        <em>Éire Aontaithe</em><br>
+        "A city that believes in international law." — Mayor Mamdani
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#he-said-it">What Happened</a></li>
+        <li><a href="#why-mamdani">The Ideological Case</a></li>
+        <li><a href="#community">Irish New York</a></li>
+        <li><a href="#timeline">Historical Context</a></li>
+        <li><a href="#the-ask">Our Three Asks</a></li>
+        <li><a href="#petition">Sign the Petition</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-share">
+      <h4>Spread the Word</h4>
+      <p>Every Irish New Yorker who signs strengthens the mayor's case for action. Share this campaign.</p>
+      <a href="https://twitter.com/intent/tweet?text=Mayor+Mamdani+believes+in+self-determination+for+the+Irish.+Now+ask+him+to+commit+to+a+United+Ireland.&url=https://unitedireland.nyc" class="share-btn" target="_blank">X / Twitter</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://unitedireland.nyc" class="share-btn" target="_blank">Facebook</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom container">
+    <p>© 2026 New Yorkers for a United Ireland. This is an independent civic advocacy campaign. Not affiliated with any political party, government body, or official Irish organization.</p>
+    <span class="footer-eire">Tiocfaidh ár lá.</span>
+  </div>
+</footer>
+
+<script>
+  // ─── INTERSECTION OBSERVER for scroll reveals ───
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ─── ANIMATED COUNTERS ───
+  function formatNum(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.0','') + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(0) + 'K';
+    return n;
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatNum(Math.round(ease * target));
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = true;
+        animateCounter(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+  // ─── FORM SUBMIT (Formspree AJAX) ───
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('petition-form');
+    const btn = form.querySelector('.btn-submit');
+    const data = new FormData(form);
+
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+      } else {
+        const json = await res.json();
+        const msg = json.errors ? json.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+        alert(msg);
+        btn.textContent = 'Sign the Petition — Éire Aontaithe';
+        btn.disabled = false;
+      }
+    } catch {
+      alert('Network error — please check your connection and try again.');
+      btn.textContent = 'Sign the Petition — Éire Aontaithe';
+      btn.disabled = false;
+    }
+  }
+
+  // ─── SMOOTH NAV ACTIVE STATE ───
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--orange)'
+        : 'rgba(255,255,255,0.7)';
+    });
+  }, { passive: true });
+</script>
+</body>
+</html>
